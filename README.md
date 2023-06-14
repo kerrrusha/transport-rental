@@ -1,5 +1,4 @@
 # Transport Rental - Spring Web App
-## Project description
 Spring Web Application that logs renting company transport by customers, writing down all the necessary information.
 ### Microservices
 - **data**
