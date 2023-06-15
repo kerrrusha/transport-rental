@@ -1,10 +1,10 @@
-package com.kerrrusha.transportrental;
+package transportrental;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class TransportRentalApplicationTests {
+class TransportRentalDataApplicationTests {
 
     @Test
     void contextLoads() {
