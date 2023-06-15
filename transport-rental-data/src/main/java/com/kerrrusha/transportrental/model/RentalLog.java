@@ -14,11 +14,11 @@ import java.time.LocalDateTime;
 public class RentalLog extends BaseEntity {
 
     @ManyToOne
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "customer_id")
     private Customer customer;
 
     @ManyToOne
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "transport_id")
     private Transport transport;
 
     private LocalDateTime rentStart;

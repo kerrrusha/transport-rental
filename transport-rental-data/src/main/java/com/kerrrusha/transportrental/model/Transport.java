@@ -12,7 +12,7 @@ import lombok.Setter;
 public class Transport extends BaseEntity {
 
     @ManyToOne
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "transport_type_id")
     private TransportType transportType;
 
     private String licensePlate;
