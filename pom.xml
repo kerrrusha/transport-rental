@@ -45,7 +45,7 @@
     </build>
 
     <scm>
-        <developerConnection>scm:git:git@github.com:kerrrusha/transport-rental.git</developerConnection>
+        <developerConnection>scm:git:https://github.com/kerrrusha/transport-rental.git</developerConnection>
       <tag>transport-rental-0.0.1</tag>
   </scm>
 </project>
