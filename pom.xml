@@ -9,7 +9,7 @@
     </parent>
     <groupId>com.kerrrusha</groupId>
     <artifactId>transport-rental</artifactId>
-    <version>0.0.2-SNAPSHOT</version>
+    <version>0.0.2</version>
     <packaging>pom</packaging>
     <name>transport-rental</name>
     <description>transport-rental</description>
@@ -46,6 +46,6 @@
 
     <scm>
         <developerConnection>scm:git:https://github.com/kerrrusha/transport-rental.git</developerConnection>
-        <tag>transport-rental-0.0.1</tag>
+        <tag>transport-rental-0.0.2</tag>
     </scm>
 </project>
