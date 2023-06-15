@@ -1,13 +1,20 @@
 package com.kerrrusha.transportrental.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-public class Transport {
+@Entity
+public class Transport extends BaseEntity {
 
+    @ManyToOne
+    @JoinColumn(name = "id")
     private TransportType transportType;
+
     private String licensePlate;
 
 }

@@ -1,11 +1,13 @@
 package com.kerrrusha.transportrental.model;
 
+import jakarta.persistence.Entity;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-public class TransportType {
+@Entity
+public class TransportType extends BaseEntity {
 
     private String title;
     private Long marketPrice;

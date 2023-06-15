@@ -1,5 +1,8 @@
 package com.kerrrusha.transportrental.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -7,10 +10,17 @@ import java.time.LocalDateTime;
 
 @Getter
 @Setter
-public class RentalLog {
+@Entity
+public class RentalLog extends BaseEntity {
 
+    @ManyToOne
+    @JoinColumn(name = "id")
     private Customer customer;
+
+    @ManyToOne
+    @JoinColumn(name = "id")
     private Transport transport;
+
     private LocalDateTime rentStart;
     private LocalDateTime rentEnd;
 
