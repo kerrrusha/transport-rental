@@ -14,7 +14,7 @@ public class RentalLogServiceMap extends AbstractMapService<RentalLog, Long> imp
 
     @Override
     public RentalLog save(RentalLog object) {
-        return super.save(object.getId(), object);
+        return super.save(object);
     }
 
     @Override

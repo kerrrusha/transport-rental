@@ -21,7 +21,7 @@ public class CustomerServiceMap extends AbstractMapService<Customer, Long> imple
 
     @Override
     public Customer save(Customer object) {
-        return super.save(object.getId(), object);
+        return super.save(object);
     }
 
     @Override

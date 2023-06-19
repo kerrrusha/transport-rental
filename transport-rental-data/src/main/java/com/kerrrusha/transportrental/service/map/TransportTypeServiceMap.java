@@ -9,7 +9,7 @@ public class TransportTypeServiceMap extends AbstractMapService<TransportType, L
 
     @Override
     public TransportType save(TransportType object) {
-        return map.put(object.getId(), object);
+        return super.save(object);
     }
 
     @Override

@@ -26,17 +26,22 @@ public class DataLoader implements CommandLineRunner {
     private final TransportTypeService transportTypeService;
 
     @Override
-    public void run(String... args) throws Exception {
+    public void run(String... args) {
         Customer customer = new Customer();
-        customer.setId(1L);
         customer.setFirstName("John");
         customer.setLastName("Smith");
         customer.setPhone("+380123456789");
         customer.setDocumentId("00123568");
         customerService.save(customer);
 
+        Customer customer1 = new Customer();
+        customer.setFirstName("Sara");
+        customer.setLastName("Connor");
+        customer.setPhone("+380123456790");
+        customer.setDocumentId("00534632");
+        customerService.save(customer1);
+
         TransportType transportType = new TransportType();
-        transportType.setId(1L);
         transportType.setTitle("Bicycle");
         transportType.setPerMinuteRentalPrice(10L);
         transportType.setMarketPrice(30000L);
@@ -45,13 +50,11 @@ public class DataLoader implements CommandLineRunner {
         transportTypeService.save(transportType);
 
         Transport transport = new Transport();
-        transport.setId(1L);
         transport.setTransportType(transportType);
         transport.setLicensePlate("AA0001EC");
         transportService.save(transport);
 
         RentalLog rentalLog = new RentalLog();
-        rentalLog.setId(1L);
         rentalLog.setCustomer(customer);
         rentalLog.setTransport(transport);
         rentalLog.setRentStart(LocalDateTime.now());
