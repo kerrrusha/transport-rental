@@ -19,6 +19,7 @@
     </modules>
     <properties>
         <java.version>17</java.version>
+        <spring-boot.repackage.skip>true</spring-boot.repackage.skip>
     </properties>
     <build>
         <plugins>
@@ -47,6 +48,5 @@
 
     <scm>
         <developerConnection>scm:git:https://github.com/kerrrusha/transport-rental.git</developerConnection>
-        <tag>transport-rental-0.0.1</tag>
     </scm>
 </project>
