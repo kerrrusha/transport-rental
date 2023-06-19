@@ -9,8 +9,28 @@
 <header class="d-flex flex-column justify-content-center align-items-center py-3 border">
     <h1 class="display-4" th:text="'Transport Rental'"></h1>
 </header>
-<main class="px-5 py-3">
+<main class="px-5 py-3 text-center">
     <h3>Rental logs</h3>
+    <table class="table w-75 mx-auto mt-5">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Customer ID</th>
+            <th>Transport ID</th>
+            <th>Start Time</th>
+            <th>End Time</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="rentalLog:${rentalLogs}">
+            <td th:text="${rentalLog.getId()}">-</td>
+            <td th:text="${rentalLog.getCustomer().getId()}">-</td>
+            <td th:text="${rentalLog.getTransport().getId()}">-</td>
+            <td th:text="${rentalLog.getRentStartString()}">-</td>
+            <td th:text="${rentalLog.getRentEndString()}">-</td>
+        </tr>
+        </tbody>
+    </table>
 </main>
 </body>
 </html>
