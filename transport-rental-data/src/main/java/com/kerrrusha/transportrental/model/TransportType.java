@@ -13,6 +13,6 @@ public class TransportType extends BaseEntity {
     private Long marketPrice;
     private Long perMinuteRentalPrice;
     private Integer personCapacity;
-    private Integer maxSpeedAllowed;
+    private Integer maxSpeed;
 
 }
