@@ -21,12 +21,12 @@ class RentalLogTest {
 
     @Test
     void getRentStart() {
-        System.out.println(exampleRentalLog.getRentStart());
+        System.out.println(exampleRentalLog.getRentStartString());
     }
 
     @Test
     void getRentEnd() {
-        System.out.println(exampleRentalLog.getRentEnd());
+        System.out.println(exampleRentalLog.getRentEndString());
     }
 
 }
