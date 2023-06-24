@@ -54,12 +54,19 @@ public class DataLoader implements CommandLineRunner {
         transport.setLicensePlate("AA0001EC");
         //transportService.save(transport);
 
-        RentalLog rentalLog = new RentalLog();
-        rentalLog.setCustomer(customer);
-        rentalLog.setTransport(transport);
-        rentalLog.setRentStart(LocalDateTime.now());
-        rentalLog.setRentEnd(LocalDateTime.now().plusHours(1));
-        rentalLogService.save(rentalLog);
+        RentalLog rentalLog1 = new RentalLog();
+        rentalLog1.setCustomer(customer);
+        rentalLog1.setTransport(transport);
+        rentalLog1.setRentStart(LocalDateTime.now());
+        rentalLog1.setRentEnd(LocalDateTime.now().plusHours(1));
+        rentalLogService.save(rentalLog1);
+
+        RentalLog rentalLog2 = new RentalLog();
+        rentalLog2.setCustomer(customer1);
+        rentalLog2.setTransport(transport);
+        rentalLog2.setRentStart(LocalDateTime.now());
+        rentalLog2.setRentEnd(LocalDateTime.now().plusHours(1));
+        rentalLogService.save(rentalLog2);
 
         log.info("Loaded {} customers", customerService.findAll().size());
         log.info("Loaded {} transport types", transportTypeService.findAll().size());
