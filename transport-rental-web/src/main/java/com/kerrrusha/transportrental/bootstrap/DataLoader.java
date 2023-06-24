@@ -32,14 +32,12 @@ public class DataLoader implements CommandLineRunner {
         customer.setLastName("Smith");
         customer.setPhone("+380123456789");
         customer.setDocumentId("00123568");
-        //customerService.save(customer);
 
         Customer customer1 = new Customer();
         customer.setFirstName("Sara");
         customer.setLastName("Connor");
         customer.setPhone("+380123456790");
         customer.setDocumentId("00534632");
-        //customerService.save(customer1);
 
         TransportType transportType = new TransportType();
         transportType.setTitle("Bicycle");
@@ -47,12 +45,10 @@ public class DataLoader implements CommandLineRunner {
         transportType.setMarketPrice(30000L);
         transportType.setMaxSpeed(50);
         transportType.setPersonCapacity(1);
-        //transportTypeService.save(transportType);
 
         Transport transport = new Transport();
         transport.setTransportType(transportType);
         transport.setLicensePlate("AA0001EC");
-        //transportService.save(transport);
 
         RentalLog rentalLog1 = new RentalLog();
         rentalLog1.setCustomer(customer);
