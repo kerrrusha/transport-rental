@@ -6,13 +6,13 @@
 </head>
 <body>
     <section class="px-5 py-3 text-center">
-        <h3>Available transport</h3>
+        <h3 th:text="#{transport-header}">Available transport</h3>
         <table class="table w-75 mx-auto mt-5">
             <thead>
             <tr>
                 <th>ID</th>
-                <th>Transport Type ID</th>
-                <th>License Plate</th>
+                <th th:text="#{transport-type-id}">Transport Type ID</th>
+                <th th:text="#{license-plate}">License Plate</th>
             </tr>
             </thead>
             <tbody>
