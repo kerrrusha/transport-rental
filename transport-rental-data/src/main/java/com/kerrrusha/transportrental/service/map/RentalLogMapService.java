@@ -9,14 +9,14 @@ import com.kerrrusha.transportrental.service.TransportService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import java.util.Set;
 
 import static java.util.Objects.nonNull;
-import static java.util.stream.Collectors.toList;
+import static java.util.stream.Collectors.toSet;
 
 @Service
 @RequiredArgsConstructor
-public class RentalLogServiceMap extends AbstractMapService<RentalLog, Long> implements RentalLogService {
+public class RentalLogMapService extends AbstractMapService<RentalLog, Long> implements RentalLogService {
 
     private final CustomerService customerService;
     private final TransportService transportService;
@@ -48,10 +48,10 @@ public class RentalLogServiceMap extends AbstractMapService<RentalLog, Long> imp
     }
 
     @Override
-    public List<RentalLog> findByCustomer(Customer customer) {
+    public Set<RentalLog> findByCustomer(Customer customer) {
         return super.findAll().stream()
                 .filter(elem -> elem.getCustomer().equals(customer))
-                .collect(toList());
+                .collect(toSet());
     }
 
 }

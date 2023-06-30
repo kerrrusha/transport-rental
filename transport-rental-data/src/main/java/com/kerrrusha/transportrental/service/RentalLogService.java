@@ -3,10 +3,10 @@ package com.kerrrusha.transportrental.service;
 import com.kerrrusha.transportrental.model.Customer;
 import com.kerrrusha.transportrental.model.RentalLog;
 
-import java.util.List;
+import java.util.Set;
 
 public interface RentalLogService extends CrudService<RentalLog, Long> {
 
-    List<RentalLog> findByCustomer(Customer customer);
+    Set<RentalLog> findByCustomer(Customer customer);
 
 }

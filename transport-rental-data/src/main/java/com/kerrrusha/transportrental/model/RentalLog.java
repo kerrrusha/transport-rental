@@ -8,7 +8,7 @@ import lombok.Setter;
 
 import java.time.LocalDateTime;
 
-import static com.kerrrusha.transportrental.util.FormatUtil.toPrettyDateTime;
+import static com.kerrrusha.transportrental.util.FormatUtil.formatDateTime;
 
 @Getter
 @Setter
@@ -26,12 +26,12 @@ public class RentalLog extends BaseEntity {
     private LocalDateTime rentStart;
     private LocalDateTime rentEnd;
 
-    public String getRentStartString() {
-        return toPrettyDateTime(getRentStart());
+    public String getRentStartFormatted() {
+        return formatDateTime(getRentStart());
     }
 
-    public String getRentEndString() {
-        return toPrettyDateTime(getRentEnd());
+    public String getRentEndFormatted() {
+        return formatDateTime(getRentEnd());
     }
 
 }
