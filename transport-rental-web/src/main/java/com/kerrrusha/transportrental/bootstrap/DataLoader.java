@@ -1,13 +1,7 @@
 package com.kerrrusha.transportrental.bootstrap;
 
-import com.kerrrusha.transportrental.model.Customer;
-import com.kerrrusha.transportrental.model.RentalLog;
-import com.kerrrusha.transportrental.model.Transport;
-import com.kerrrusha.transportrental.model.TransportType;
-import com.kerrrusha.transportrental.service.CustomerService;
-import com.kerrrusha.transportrental.service.RentalLogService;
-import com.kerrrusha.transportrental.service.TransportService;
-import com.kerrrusha.transportrental.service.TransportTypeService;
+import com.kerrrusha.transportrental.model.*;
+import com.kerrrusha.transportrental.service.*;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
@@ -24,6 +18,7 @@ public class DataLoader implements CommandLineRunner {
     private final RentalLogService rentalLogService;
     private final TransportService transportService;
     private final TransportTypeService transportTypeService;
+    private final TransportFeatureService transportFeatureService;
 
     @Override
     public void run(String... args) {
@@ -40,14 +35,20 @@ public class DataLoader implements CommandLineRunner {
         customer.setDocumentId("00534632");
 
         TransportType transportType = new TransportType();
-        transportType.setTitle("Bicycle");
-        transportType.setPerMinuteRentalPrice(10L);
-        transportType.setMarketPrice(30000L);
-        transportType.setMaxSpeed(50);
-        transportType.setPersonCapacity(1);
+        transportType.setName("Bicycle");
+
+        TransportFeature feature = new TransportFeature();
+        feature.setName("eco");
+        transportFeatureService.save(feature);
 
         Transport transport = new Transport();
+        transport.setTitle("Trek Emonda SL 7 Disc");
+        transport.setPerMinuteRentalPrice(10L);
+        transport.setMarketPrice(337000L);
+        transport.setMaxSpeed(50);
+        transport.setPersonCapacity(1);
         transport.setTransportType(transportType);
+        transport.addFeature(feature);
         transport.setLicensePlate("AA0001EC");
 
         RentalLog rentalLog1 = new RentalLog();
@@ -66,6 +67,7 @@ public class DataLoader implements CommandLineRunner {
 
         log.info("Loaded {} customers", customerService.findAll().size());
         log.info("Loaded {} transport types", transportTypeService.findAll().size());
+        log.info("Loaded {} transport features", transportFeatureService.findAll().size());
         log.info("Loaded {} transports", transportService.findAll().size());
         log.info("Loaded {} rental logs", rentalLogService.findAll().size());
     }
