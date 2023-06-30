@@ -1,6 +1,7 @@
 package com.kerrrusha.transportrental.model;
 
 import jakarta.persistence.Entity;
+import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -9,10 +10,7 @@ import lombok.Setter;
 @Entity
 public class TransportType extends BaseEntity {
 
-    private String title;
-    private Long marketPrice;
-    private Long perMinuteRentalPrice;
-    private Integer personCapacity;
-    private Integer maxSpeed;
+    @NotBlank
+    private String name;
 
 }

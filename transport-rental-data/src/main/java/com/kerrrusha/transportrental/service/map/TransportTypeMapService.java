@@ -5,7 +5,7 @@ import com.kerrrusha.transportrental.service.TransportTypeService;
 import org.springframework.stereotype.Service;
 
 @Service
-public class TransportTypeServiceMap extends AbstractMapService<TransportType, Long> implements TransportTypeService {
+public class TransportTypeMapService extends AbstractMapService<TransportType, Long> implements TransportTypeService {
 
     @Override
     public TransportType save(TransportType object) {
@@ -20,13 +20,6 @@ public class TransportTypeServiceMap extends AbstractMapService<TransportType, L
     @Override
     public void deleteById(Long id) {
         super.deleteById(id);
-    }
-
-    @Override
-    public TransportType findByPerMinuteRentalPriceBetween(Long start, Long end) {
-        return super.findAll().stream()
-                .filter(elem -> start <= elem.getPerMinuteRentalPrice() && elem.getPerMinuteRentalPrice() < end)
-                .findAny().orElse(null);
     }
 
 }
