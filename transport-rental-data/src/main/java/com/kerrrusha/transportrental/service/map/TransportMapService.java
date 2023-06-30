@@ -11,7 +11,7 @@ import static java.util.Objects.nonNull;
 
 @Service
 @RequiredArgsConstructor
-public class TransportServiceMap extends AbstractMapService<Transport, Long> implements TransportService {
+public class TransportMapService extends AbstractMapService<Transport, Long> implements TransportService {
 
     private final TransportTypeService transportTypeService;
 
@@ -41,7 +41,7 @@ public class TransportServiceMap extends AbstractMapService<Transport, Long> imp
     public Transport findByLicensePlate(String licensePlate) {
         return super.findAll().stream()
                 .filter(elem -> elem.getLicensePlate().equals(licensePlate))
-                .findAny().orElse(null);
+                .findFirst().orElse(null);
     }
 
 }

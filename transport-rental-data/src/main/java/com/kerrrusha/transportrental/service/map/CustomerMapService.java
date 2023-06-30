@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import java.util.Set;
 
 @Service
-public class CustomerServiceMap extends AbstractMapService<Customer, Long> implements CustomerService {
+public class CustomerMapService extends AbstractMapService<Customer, Long> implements CustomerService {
 
     @Override
     public Customer findById(Long id) {
@@ -38,7 +38,7 @@ public class CustomerServiceMap extends AbstractMapService<Customer, Long> imple
     public Customer findByDocumentId(String documentId) {
         return super.findAll().stream()
                 .filter(elem -> elem.getDocumentId().equals(documentId))
-                .findAny().orElse(null);
+                .findFirst().orElse(null);
     }
 
 }
