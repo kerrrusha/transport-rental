@@ -7,11 +7,17 @@
 <body>
     <section class="px-5 py-3 text-center">
         <h3 th:text="#{transport-header}">Available transport</h3>
-        <table class="table w-75 mx-auto mt-5">
+        <table class="table mx-auto mt-5">
             <thead>
             <tr>
                 <th>ID</th>
                 <th th:text="#{transport-type-id}">Transport Type ID</th>
+                <th th:text="#{transport-title}">Title</th>
+                <th th:text="#{transport-marketPrice}">Market Price</th>
+                <th th:text="#{transport-perMinuteRentalPrice}">Per-minute Rental Price</th>
+                <th th:text="#{transport-personCapacity}">Person Capacity</th>
+                <th th:text="#{transport-maxSpeed}">Max Speed</th>
+                <th th:text="#{transport-features}">Features</th>
                 <th th:text="#{license-plate}">License Plate</th>
             </tr>
             </thead>
@@ -19,6 +25,12 @@
             <tr th:each="transport:${transportList}">
                 <td th:text="${transport.getId()}">-</td>
                 <td th:text="${transport.getTransportType().getId()}">-</td>
+                <td th:text="${transport.getTitle()}">-</td>
+                <td th:text="${transport.getMarketPriceFormatted()}">-</td>
+                <td th:text="${transport.getPerMinuteRentalPriceFormatted()}">-</td>
+                <td th:text="${transport.getPersonCapacity()}">-</td>
+                <td th:text="${transport.getMaxSpeedFormatted()}">-</td>
+                <td th:text="${transport.getFeatures()}">-</td>
                 <td th:text="${transport.getLicensePlate()}">-</td>
             </tr>
             </tbody>

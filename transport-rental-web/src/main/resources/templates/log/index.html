@@ -22,8 +22,8 @@
                 <td th:text="${rentalLog.getId()}">-</td>
                 <td th:text="${rentalLog.getCustomer().getId()}">-</td>
                 <td th:text="${rentalLog.getTransport().getId()}">-</td>
-                <td th:text="${rentalLog.getRentStartString()}">-</td>
-                <td th:text="${rentalLog.getRentEndString()}">-</td>
+                <td th:text="${rentalLog.getRentStartFormatted()}">-</td>
+                <td th:text="${rentalLog.getRentEndFormatted()}">-</td>
             </tr>
             </tbody>
         </table>
