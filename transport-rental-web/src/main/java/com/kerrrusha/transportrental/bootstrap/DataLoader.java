@@ -27,15 +27,18 @@ public class DataLoader implements CommandLineRunner {
         customer.setLastName("Smith");
         customer.setPhone("+380123456789");
         customer.setDocumentId("00123568");
+        customerService.save(customer);
 
         Customer customer1 = new Customer();
-        customer.setFirstName("Sara");
-        customer.setLastName("Connor");
-        customer.setPhone("+380123456790");
-        customer.setDocumentId("00534632");
+        customer1.setFirstName("Sara");
+        customer1.setLastName("Connor");
+        customer1.setPhone("+380123456790");
+        customer1.setDocumentId("00534632");
+        customerService.save(customer1);
 
         TransportType transportType = new TransportType();
         transportType.setName("Bicycle");
+        transportTypeService.save(transportType);
 
         TransportFeature feature = new TransportFeature();
         feature.setName("eco");
@@ -50,6 +53,7 @@ public class DataLoader implements CommandLineRunner {
         transport.setTransportType(transportType);
         transport.addFeature(feature);
         transport.setLicensePlate("AA0001EC");
+        transportService.save(transport);
 
         RentalLog rentalLog1 = new RentalLog();
         rentalLog1.setCustomer(customer);
