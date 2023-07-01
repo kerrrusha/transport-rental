@@ -5,12 +5,14 @@ import com.kerrrusha.transportrental.model.TransportType;
 import com.kerrrusha.transportrental.service.TransportService;
 import com.kerrrusha.transportrental.service.TransportTypeService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import static java.util.Objects.nonNull;
 
 @Service
 @RequiredArgsConstructor
+@Profile({"default", "map"})
 public class TransportMapService extends AbstractMapService<Transport, Long> implements TransportService {
 
     private final TransportTypeService transportTypeService;

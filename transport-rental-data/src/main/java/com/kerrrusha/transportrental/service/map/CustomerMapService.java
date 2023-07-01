@@ -2,11 +2,13 @@ package com.kerrrusha.transportrental.service.map;
 
 import com.kerrrusha.transportrental.model.Customer;
 import com.kerrrusha.transportrental.service.CustomerService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 @Service
+@Profile({"default", "map"})
 public class CustomerMapService extends AbstractMapService<Customer, Long> implements CustomerService {
 
     @Override

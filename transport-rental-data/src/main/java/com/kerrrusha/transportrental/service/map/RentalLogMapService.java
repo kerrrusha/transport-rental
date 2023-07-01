@@ -7,6 +7,7 @@ import com.kerrrusha.transportrental.service.CustomerService;
 import com.kerrrusha.transportrental.service.RentalLogService;
 import com.kerrrusha.transportrental.service.TransportService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
@@ -16,6 +17,7 @@ import static java.util.stream.Collectors.toSet;
 
 @Service
 @RequiredArgsConstructor
+@Profile({"default", "map"})
 public class RentalLogMapService extends AbstractMapService<RentalLog, Long> implements RentalLogService {
 
     private final CustomerService customerService;
@@ -48,7 +50,7 @@ public class RentalLogMapService extends AbstractMapService<RentalLog, Long> imp
     }
 
     @Override
-    public Set<RentalLog> findByCustomer(Customer customer) {
+    public Set<RentalLog> findAllByCustomer(Customer customer) {
         return super.findAll().stream()
                 .filter(elem -> elem.getCustomer().equals(customer))
                 .collect(toSet());
