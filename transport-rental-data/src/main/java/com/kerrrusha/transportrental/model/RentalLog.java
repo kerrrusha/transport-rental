@@ -4,6 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
@@ -13,7 +14,12 @@ import static com.kerrrusha.transportrental.util.FormatUtil.formatDateTime;
 @Getter
 @Setter
 @Entity
+@NoArgsConstructor
 public class RentalLog extends BaseEntity {
+
+    public RentalLog(Long id) {
+        this.id = id;
+    }
 
     @ManyToOne
     @JoinColumn(name = "customer_id")
