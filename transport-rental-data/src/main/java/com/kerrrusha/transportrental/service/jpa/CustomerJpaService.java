@@ -46,7 +46,7 @@ public class CustomerJpaService implements CustomerService {
 
     @Override
     public Customer findByDocumentId(String documentId) {
-        return customerRepository.findByDocumentId(documentId);
+        return customerRepository.findByDocumentId(documentId).orElse(null);
     }
 
 }
