@@ -3,7 +3,9 @@ package com.kerrrusha.transportrental.model;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.experimental.SuperBuilder;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -14,6 +16,8 @@ import static com.kerrrusha.transportrental.util.FormatUtil.formatSpeed;
 @Getter
 @Setter
 @Entity
+@SuperBuilder
+@NoArgsConstructor
 public class Transport extends BaseEntity {
 
     @NotBlank

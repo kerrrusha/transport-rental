@@ -6,6 +6,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentCaptor;
+import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.test.web.servlet.MockMvc;
@@ -25,18 +26,14 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @ExtendWith(MockitoExtension.class)
 class RentalLogControllerTest {
 
-    RentalLogController rentalLogController;
-
     @Mock
     RentalLogService rentalLogService;
 
+    @InjectMocks
+    RentalLogController rentalLogController;
+
     @Mock
     Model model;
-
-    @BeforeEach
-    void setUp() {
-        rentalLogController = new RentalLogController(rentalLogService);
-    }
 
     @Test
     void testMockMVC() throws Exception {
