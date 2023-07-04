@@ -5,7 +5,9 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.MappedSuperclass;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.experimental.SuperBuilder;
 import org.hibernate.proxy.HibernateProxy;
 
 import java.io.Serializable;
@@ -13,7 +15,9 @@ import java.util.Objects;
 
 @Getter
 @Setter
+@SuperBuilder
 @MappedSuperclass
+@NoArgsConstructor
 public class BaseEntity implements Serializable {
 
     @Id

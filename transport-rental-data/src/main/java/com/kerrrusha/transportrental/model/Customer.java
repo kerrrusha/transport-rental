@@ -6,13 +6,16 @@ import jakarta.persistence.Table;
 import jakarta.persistence.UniqueConstraint;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 @Getter
 @Setter
 @Entity
 @Table(uniqueConstraints = {@UniqueConstraint(columnNames = {"document_id"})})
+@AllArgsConstructor
+@NoArgsConstructor
+@SuperBuilder
 public class Customer extends BaseEntity {
 
     @NotBlank
