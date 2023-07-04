@@ -23,7 +23,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
 
 @ExtendWith(MockitoExtension.class)
-class TransportControllerTest {
+class RentalLogControllerTest {
 
     RentalLogController rentalLogController;
 
@@ -50,8 +50,8 @@ class TransportControllerTest {
     void index() {
         //given
         Set<RentalLog> input = new HashSet<>();
-        input.add(new RentalLog(1L));
-        input.add(new RentalLog(2L));
+        input.add(RentalLog.builder().id(1L).build());
+        input.add(RentalLog.builder().id(2L).build());
 
         when(rentalLogService.findAll()).thenReturn(input);
         ArgumentCaptor<Set<RentalLog>> argumentCaptor = ArgumentCaptor.forClass(Set.class);
