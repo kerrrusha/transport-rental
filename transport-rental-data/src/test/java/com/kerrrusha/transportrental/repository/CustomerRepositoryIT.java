@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -31,6 +32,7 @@ class CustomerRepositoryIT {
     }
 
     @Test
+    @Rollback
     @Transactional
     void findByDocumentId() {
         customerRepository.save(customer);
@@ -39,6 +41,7 @@ class CustomerRepositoryIT {
     }
 
     @Test
+    @Rollback
     @Transactional
     void crudTest() {
         assertTrue(customerRepository.findByDocumentId("223400343").isEmpty());
